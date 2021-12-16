@@ -1,0 +1,69 @@
+<!--
+File: scrabble.html
+GUI Assignment: Recreate the scrabble game
+Evan LeBlanc, UMass Lowell Computer Science, Evan_LeBlanc@student.uml.edu
+Copyright (c) 2021 by Evan. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by EL on December 16, 2021 at 10:00 PM
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="css/scrabble.css">
+    <link rel="stylesheet" href="js/Scrabble_Pieces_AssociativeArray_Jesse.js">
+    <link rel="stylesheet" href="js/scrabble.js">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    
+</head>
+
+<body>
+
+    <h1>Lets play Scrabble!<h1>
+
+<!--The board is implemented in a div-->
+    <div id="board">
+        <img src="graphics_data/board.png">
+    </div>
+
+<!--For testing reasons I have hard-coded tiles onto the rack-->
+<div id="holder">
+   <div class="dragTile">
+       <img src="graphics_data/Scrabble_Tile_H.jpg" height="70px" width="75px" margin-right="25px" class="h">
+       <img src="graphics_data/Scrabble_Tile_E.jpg" height="70px" width="75px" margin-right="20px" class="e">
+       <img src="graphics_data/Scrabble_Tile_L.jpg" height="70px" width="75px" margin-right="15px" class="l">
+       <img src="graphics_data/Scrabble_Tile_L.jpg" height="70px" width="75px" margin-right="10px" class="l">
+       <img src="graphics_data/Scrabble_Tile_O.jpg" height="70px" width="75px" margin-right="5px" class="o">
+    </div>
+</div>
+
+<!--Buttins for the game-->
+    <form>
+        <button type="button" id="submit" onclick="submit()">Submit word</button>
+        <button type="button" id="reset">Reset tiles</button>
+        <button type="button" id="restart" onclick="restart()">Restart game</button>
+
+    </form>
+
+    <p>INSTRUCTIONS: Drag the tiles and place them on the board to create a word. You will gain a sum of points based on the numeric value each letter has.</p>
+    
+    <!--Script to make the tiles draggable-->
+<script>
+    $(function(){
+    $('.h').draggable();
+    $('.e').draggable();
+    $('.l').draggable();
+    $('.o').draggable();
+
+    $('board').droppable({
+        drop: function( event, ui ) {
+        $(this).find( "img" );
+        }
+    });
+});
+</script>
+   
+</body>
+</html>
