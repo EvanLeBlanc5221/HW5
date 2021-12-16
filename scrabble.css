@@ -1,0 +1,29 @@
+body{
+background: rgb(145, 211, 124);
+}
+
+h1{
+color: rgb(68, 67, 67);
+font-size: 40px;
+text-align: center;
+}
+
+#board{
+background-image: url('../graphics_data/board.png');
+background-repeat: no-repeat;
+background-position: center;
+margin-top: 50px;
+}
+
+#holder{
+background-image: url('../graphics_data/tile_holder.png');
+background-repeat: no-repeat;
+background-position: center;
+margin-top: 200px;
+}
+
+p{
+font-size: 25px;
+margin-bottom: 10px;
+}
+
